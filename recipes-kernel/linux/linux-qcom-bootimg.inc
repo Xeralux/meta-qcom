@@ -50,6 +50,7 @@ do_deploy_append() {
 
     priv_make_image ${QCOM_BOOTIMG_ROOTFS} ${BOOT_IMAGE_BASE_NAME}
     ln -sf ${BOOT_IMAGE_BASE_NAME}.img ${DEPLOYDIR}/${BOOT_IMAGE_SYMLINK_NAME}.img
+    ln -sf ${BOOT_IMAGE_BASE_NAME}.img ${DEPLOYDIR}/boot-${MACHINE}.img
 
     # build sd boot image only for machines supporting it.
     if [ "${SD_QCOM_BOOTIMG_ROOTFS}" != "undefined" ]; then
